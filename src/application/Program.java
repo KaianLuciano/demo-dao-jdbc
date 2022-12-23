@@ -19,7 +19,7 @@ public class Program {
 		
 		System.out.println(seller);
 		
-		System.out.println("\n===== TEST 2: Seller findbyID =====\n");
+		System.out.println("\n===== TEST 2: Seller findbyDepartment =====\n");
 		Department dep = new Department(2, null);
 		List<Seller> list = sellerDao.findByDepartment(dep);
 		list.forEach(System.out::println);
@@ -28,9 +28,16 @@ public class Program {
 		list = sellerDao.findAll();
 		list.forEach(System.out::println);
 		
-		System.out.println("\n===== TEST 3: Seller findAll =====\n");
+		System.out.println("\n===== TEST 4: Seller insert =====\n");
 		Seller sellerTest = new Seller(1, "Enzo", "enzo@gmail.com", new Date(), 3.000, new Department(3, "Enzo"));
 		sellerDao.insert(sellerTest);
+		
+		System.out.println("\n===== TEST 5: Seller update =====\n");
+		seller = sellerDao.findById(1);
+		seller.setName("Martha Waine");
+		sellerDao.update(seller);
+		System.out.println("Update completed");
+
 	}
 
 }
