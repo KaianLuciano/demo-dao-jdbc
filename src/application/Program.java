@@ -32,9 +32,9 @@ public class Program {
 		list = sellerDao.findAll();
 		list.forEach(System.out::println);
 		
-		//System.out.println("\n===== TEST 4: Seller insert =====\n");
-		//Seller sellerTest = new Seller(1, "Enzo", "enzo@gmail.com", new Date(), 3.000, new Department(3, "Enzo"));
-		//sellerDao.insert(sellerTest);
+		System.out.println("\n===== TEST 4: Seller insert =====\n");
+		Seller sellerTest = new Seller(1, "Enzo", "enzo@gmail.com", new Date(), 3.000, new Department(3, "Enzo"));
+		sellerDao.insert(sellerTest);
 		
 		System.out.println("\n===== TEST 5: Seller update =====\n");
 		seller = sellerDao.findById(1);
@@ -49,6 +49,7 @@ public class Program {
 		System.out.println("Deleted completed");
 		
 		sc.close();
+	
 	}
 
 }
