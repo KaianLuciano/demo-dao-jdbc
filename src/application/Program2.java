@@ -11,8 +11,8 @@ public class Program2 {
 	public static void main(String[] args) {
 		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
 		
-		//System.out.println("===== TEST 1: Department Insert =====\n");
-		//departmentDao.insert(new Department(7, "Computação"));
+		System.out.println("===== TEST 1: Department Insert =====\n");
+		departmentDao.insert(new Department(7, "Computação"));
 		
 		System.out.println("===== TEST 2: Department Update =====\n");
 		departmentDao.update(new Department(6, "Games"));
@@ -24,7 +24,7 @@ public class Program2 {
 		Department dep = departmentDao.findById(2);
 		System.out.println(dep);
 		
-		System.out.println("===== TEST 5: Department FindById =====\n");
+		System.out.println("===== TEST 5: Department FindAll =====\n");
 		List<Department> dep2 = departmentDao.findAll();
 		dep2.forEach(System.out::println);
 	}
